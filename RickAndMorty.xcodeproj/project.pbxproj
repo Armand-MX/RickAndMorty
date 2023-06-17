@@ -24,8 +24,6 @@
 		C432F6302A38032D00B8E11C /* GraphQLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLService.swift; sourceTree = "<group>"; };
 		C432F6322A38034700B8E11C /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		C432F63A2A3822F100B8E11C /* GetCharacters.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetCharacters.graphql; sourceTree = "<group>"; };
-		C4851E162A3832D700176ACE /* OrderedCollections.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; name = OrderedCollections.docc; path = "../../Library/Developer/Xcode/DerivedData/RickAndMorty-betzocttyoqaxsctqzqrcruernbs/SourcePackages/checkouts/swift-collections/Sources/OrderedCollections/OrderedCollections.docc"; sourceTree = "<group>"; };
-		C4851E172A3832E500176ACE /* OrderedCollections.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = OrderedCollections.md; path = "../../Library/Developer/Xcode/DerivedData/RickAndMorty-betzocttyoqaxsctqzqrcruernbs/SourcePackages/checkouts/swift-collections/Sources/OrderedCollections/OrderedCollections.docc/OrderedCollections.md"; sourceTree = "<group>"; };
 		C4851E292A3ABB6C00176ACE /* schema.graphqls */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		C4851E342A3AD8DC00176ACE /* RickNMortyAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RickNMortyAPI; path = RickAndMorty/GraphQL/RickNMortyAPI; sourceTree = "<group>"; };
 		C4EE090B2A37C49200F663FB /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,15 +64,6 @@
 			path = GraphQL;
 			sourceTree = "<group>";
 		};
-		C432F63C2A38304800B8E11C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C4851E162A3832D700176ACE /* OrderedCollections.docc */,
-				C4851E172A3832E500176ACE /* OrderedCollections.md */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		C4851E332A3AD8DB00176ACE /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +78,6 @@
 				C4851E332A3AD8DB00176ACE /* Packages */,
 				C4EE090D2A37C49200F663FB /* RickAndMorty */,
 				C4EE090C2A37C49200F663FB /* Products */,
-				C432F63C2A38304800B8E11C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
