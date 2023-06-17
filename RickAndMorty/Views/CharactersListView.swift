@@ -13,7 +13,10 @@ struct CharactersListView: View {
     
     var body: some View {
         List (viewModel.characters){ character in
-            Text(character.name)
+            HStack {
+                AsyncImage(url: character.imageURL, scale: 3)
+                Text(character.name)
+            }
         }.task {
             await viewModel.getCharacters()
         }

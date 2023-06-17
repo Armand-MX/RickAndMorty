@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RickNMortyAPI
 
 @MainActor
 class CharactersListViewModel: ObservableObject {
@@ -14,16 +15,25 @@ class CharactersListViewModel: ObservableObject {
     
     @Published var characters: [CharacterViewModel] = []
     
-    init(webService: ServiceProtocol = GraphQLService()) {
+    init(webService: ServiceProtocol = GraphQLService.shared) {
         self.webService = webService
     }
     
     func getCharacters() async {
-        do {
-            let characters = try await webService.getCharacters()
-            self.characters = characters.map(CharacterViewModel.init)
-        } catch {
-            print(error)
+        GraphQLService.shared.apollo.fetch(query: CharactersQuery()) { result in
+            switch result {
+            case .success(let graphQLResult):
+                if let characters = graphQLResult.data?.characters?.results {
+                    let results = characters.compactMap { $0 }
+                    self.characters = results.map(CharacterViewModel.init)
+                }
+                
+                if let errors = graphQLResult.errors {
+                    print("Failure! Error: \(errors)")
+                }
+            case .failure(let error):
+                print("Failure! Error: \(error)")
+            }
         }
     }
 }

@@ -6,24 +6,29 @@
 //
 
 import Foundation
+import RickNMortyAPI
 
 struct CharacterViewModel: Identifiable {
 
-    private var character: Character
+    private var character: CharactersQuery.Data.Characters.Result
     
-    init(character: Character) {
+    init(character: CharactersQuery.Data.Characters.Result) {
         self.character = character
     }
     
     var id: Int {
-        character.id
+        Int(character.id ?? "") ?? 0
     }
     
     var name: String {
-        character.name
+        character.name ?? ""
+    }
+    
+    var imageURL: URL? {
+        URL(string: character.image ?? "")
     }
     
     var status: String {
-        character.status
+        character.status ?? ""
     }
 }

@@ -6,19 +6,22 @@
 //
 
 import Foundation
+import Apollo
 
 protocol ServiceProtocol {
-    func getCharacters() async throws -> [Character]
+    var apollo: ApolloClient { get set }
 }
 
 class GraphQLService: ServiceProtocol {
     
-    func getCharacters() async throws -> [Character] {
-        // TODO: Implement GraphQL
-        return [
-            Character(id: 1, name: "name1", status: "alive", species: "human"),
-            Character(id: 2, name: "name2", status: "alive", species: "human"),
-            Character(id: 3, name: "name3", status: "alive", species: "human")
-        ]
-    }
+    static let shared = GraphQLService()
+    
+    lazy var apollo: ApolloClient = {
+        guard let url = URL(string: "https://rickandmortyapi.com/graphql") else {
+            fatalError("Invalid URL")
+        }
+        return ApolloClient(url: url)
+    }()
+    
+    private init() {}
 }
