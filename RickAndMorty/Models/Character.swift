@@ -70,7 +70,7 @@ struct Character: Decodable, Identifiable {
         }
     }
     
-    struct Episode: Decodable {
+    struct Episode: Decodable, Identifiable {
         let id: String
         let name: String
         let airDate: String
