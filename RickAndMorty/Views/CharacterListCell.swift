@@ -10,20 +10,20 @@ import RickNMortyAPI
 
 struct CharacterListCell: View {
     
-    let character: CharacterViewModel?
+    let character: Character?
 
     var body: some View {
         HStack {
-            RemoteImage(url: character!.imageURL!)
+            RemoteImage(urlString: character?.image ?? "")
                 .frame(width: 50, height: 50)
                 .clipShape(Circle())
                 .shadow(radius: 5)
             VStack(alignment: .leading) {
                 Text(character!.name)
                     .bold()
-                Text(character!.status)
+                Text(character!.status.rawValue)
                     .italic()
-                    .foregroundColor(getStatusColorFor(status: Status(rawValue: character!.status)!))
+                    .foregroundColor(getStatusColorFor(status: Status(rawValue: character!.status.rawValue)!))
             }
         }
     }
@@ -42,8 +42,6 @@ struct CharacterListCell: View {
 
 struct CharacterListCell_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterListCell(
-            character:CharacterViewModel(
-                character: characterPreview))
+        CharacterListCell(character: characterPreview)
     }
 }

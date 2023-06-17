@@ -10,11 +10,17 @@ import RickNMortyAPI
 
 typealias CharacterData = CharactersQuery.Data.Characters
 
+enum Status: String, Decodable {
+    case alive = "Alive"
+    case dead = "Dead"
+    case unknown = "unknown"
+}
+
 
 struct Character: Decodable, Identifiable {
     let id: String
     let name: String
-    let status: String
+    let status: Status
     let species: String
     let type: String
     let gender: String
@@ -26,7 +32,7 @@ struct Character: Decodable, Identifiable {
     init(_ character: CharacterData.Result?) {
         self.id = character?.id ?? ""
         self.name = character?.name ?? ""
-        self.status = character?.status ?? ""
+        self.status = Status(rawValue: character?.status ?? Status.unknown.rawValue) ?? .unknown
         self.species = character?.species ?? ""
         self.type = character?.type ?? ""
         self.gender = character?.gender ?? ""

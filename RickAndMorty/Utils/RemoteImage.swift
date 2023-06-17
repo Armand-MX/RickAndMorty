@@ -27,8 +27,8 @@ class ImageCache {
 struct RemoteImage: View {
     @ObservedObject var imageLoader: ImageLoader
 
-    init(url: URL) {
-        imageLoader = ImageLoader(url: url)
+    init(urlString: String) {
+        imageLoader = ImageLoader(urlString: urlString)
     }
 
     var body: some View {
@@ -44,30 +44,32 @@ struct RemoteImage: View {
 class ImageLoader: ObservableObject {
     @Published var image: UIImage?
     
-    private var url: URL
-    private var urlPath: String {
-        url.path()
-    }
+    private var urlString: String
+
     private var task: URLSessionDataTask?
     
-    init(url: URL) {
-        self.url = url
+    init(urlString: String) {
+        self.urlString = urlString
         loadImage()
     }
  
     private func loadImage() {
-        if let cachedImage = ImageCache.shared.get(forKey: urlPath) {
+        if let cachedImage = ImageCache.shared.get(forKey: urlString) {
             self.image = cachedImage
             return
         }
 
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
         task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else { return }
 
             DispatchQueue.main.async {
                 let image = UIImage(data: data)
                 self.image = image
-                ImageCache.shared.set(image!, forKey: self.urlPath)
+                ImageCache.shared.set(image!, forKey: self.urlString)
             }
         }
         task?.resume()

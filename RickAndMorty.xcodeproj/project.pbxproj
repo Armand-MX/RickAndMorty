@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C432F6312A38032D00B8E11C /* GraphQLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C432F6302A38032D00B8E11C /* GraphQLService.swift */; };
-		C432F6332A38034700B8E11C /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C432F6322A38034700B8E11C /* CharacterViewModel.swift */; };
 		C432F63B2A3822F100B8E11C /* GetCharacters.graphql in Resources */ = {isa = PBXBuildFile; fileRef = C432F63A2A3822F100B8E11C /* GetCharacters.graphql */; };
 		C4851E2F2A3ABEA600176ACE /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = C4851E2E2A3ABEA600176ACE /* Apollo */; };
 		C4851E302A3AC39F00176ACE /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = C4851E292A3ABB6C00176ACE /* schema.graphqls */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		C432F6302A38032D00B8E11C /* GraphQLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLService.swift; sourceTree = "<group>"; };
-		C432F6322A38034700B8E11C /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		C432F63A2A3822F100B8E11C /* GetCharacters.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetCharacters.graphql; sourceTree = "<group>"; };
 		C4851E292A3ABB6C00176ACE /* schema.graphqls */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		C4851E342A3AD8DC00176ACE /* RickNMortyAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RickNMortyAPI; path = RickAndMorty/GraphQL/RickNMortyAPI; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				C4EE09262A37FFDD00F663FB /* CharactersListViewModel.swift */,
-				C432F6322A38034700B8E11C /* CharacterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -246,7 +243,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		C4851E312A3AC45900176ACE /* Generate Apollo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -258,7 +255,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
@@ -277,7 +274,6 @@
 				C4EE090F2A37C49200F663FB /* RickAndMortyApp.swift in Sources */,
 				C4851E402A3D623400176ACE /* RemoteImage.swift in Sources */,
 				C432F6312A38032D00B8E11C /* GraphQLService.swift in Sources */,
-				C432F6332A38034700B8E11C /* CharacterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
