@@ -24,7 +24,7 @@ class CharactersListViewModel: ObservableObject {
             switch result {
             case .success(let graphQLResult):
                 if let characters = graphQLResult.data?.characters?.results {
-                    let results = characters.compactMap { $0 }
+                    let results = characters.compactMap(Character.init)
                     self.characters = results.map(CharacterViewModel.init)
                 }
                 

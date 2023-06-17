@@ -8,11 +8,20 @@
 import Foundation
 import RickNMortyAPI
 
+/// The status of the character ('Alive', 'Dead' or 'unknown').
+enum Status: String {
+    case alive = "Alive"
+    case dead = "Dead"
+    case unknown = "unknown"
+}
+
+
+
 struct CharacterViewModel: Identifiable {
 
-    private var character: CharactersQuery.Data.Characters.Result
+    private var character: Character
     
-    init(character: CharactersQuery.Data.Characters.Result) {
+    init(character: Character) {
         self.character = character
     }
     

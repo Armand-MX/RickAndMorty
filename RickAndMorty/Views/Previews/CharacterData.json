@@ -1,0 +1,35 @@
+{
+    "id": "7",
+    "name": "Abradolf Lincler",
+    "status": "unknown",
+    "species": "Human",
+    "type": "Genetic experiment",
+    "gender": "Male",
+    "image": "https://rickandmortyapi.com/api/character/avatar/7.jpeg",
+    "origin": {
+        "id": "20",
+        "name": "Earth (Replacement Dimension)",
+        "type": "Planet",
+        "dimension": "Replacement Dimension"
+    },
+    "location": {
+        "id": "21",
+        "name": "Testicle Monster Dimension",
+        "type": "Dimension",
+        "dimension": "Testicle Monster Dimension"
+    },
+    "episode": [
+        {
+            "id": "10",
+            "name": "Close Rick-counters of the Rick Kind",
+            "air_date": "April 7, 2014",
+            "episode": "S01E10"
+        },
+        {
+            "id": "11",
+            "name": "Ricksy Business",
+            "air_date": "April 14, 2014",
+            "episode": "S01E11"
+        }
+    ]
+}

@@ -5,7 +5,7 @@
 //  Created by Armando Alvarado on 12/06/23.
 //
 
-import SwiftUI
+import SwiftUI 
 
 struct CharactersListView: View {
     
@@ -13,10 +13,7 @@ struct CharactersListView: View {
     
     var body: some View {
         List (viewModel.characters){ character in
-            HStack {
-                AsyncImage(url: character.imageURL, scale: 3)
-                Text(character.name)
-            }
+            CharacterListCell(character: character)
         }.task {
             await viewModel.getCharacters()
         }
